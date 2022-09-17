@@ -25,8 +25,13 @@
 ### 2.3 테스트 및 액션 관리(필요 시 git action 테스트 프로세스로 대체한다.)
 * main branch에 머지할 경우 아래 사항을 수행한다  
 	+  신규 추가한 사항이 python class/function이며 testcase가 없을 경우
-		* 코드를 추가한 사람은 이를 테스트할 수 있는 testcode를 unit test 용도로 별도 폴더에 작성한다. 경로는 추후 협의한다.  
+		* pull request 제안자는 이를 테스트할 수 있는 test code를 unit test 용도로 별도 폴더에 작성한다. 경로는 추후 협의한다.  
 		* pull request 시 본문 맨 마지막에 testcode 실행 결과 로그를 첨부한다.  
 		* assignee 중 한명이 직접 testcode를 실행하여 테스트하고(이하 manual unit test) 그 기록을 comment로 기입한다.
 		* 최소 2명 이상의 assignee를 걸고 confirm 받는다.  
-		* assignee가 approve 시에는 testcode 실행 결과 로그를 첨부하고 . 단 github action 도입 이후에는 action으로 대체한다.  
+		* assignee가 approve 시에는 testcode 실행 결과 로그를 첨부하고 . 단 github action 도입 이후에는 action으로 대체한다.
+	+ 수정사항이 python class/function이며 testcase가 있을 경우
+		* pull request 제안자는 request 본문 맨 마지막에 test code 실행 결과 로그를 첨부한다.  
+
+* nightly 브랜치에 머지할 경우 test code 추가 및 pull request 제안자의 실행 결과만 본문에 추가합니다.
+* 추가한 사항이 위와 달라 테스트가 어려울 경우 문서화를 먼저 진행하고 실행 로그/데이터 버젼/conda env 환경 및 필요하다고 생각되는 사항을 pull request 본문 마지막에 기입한다.
