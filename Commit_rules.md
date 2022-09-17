@@ -17,9 +17,9 @@
 
 ### 2.2 머지 관리 
 * 팀 구성원 전원에게 review를 요청한다.  
-* nightly, main 브랜치의 ***모든*** 머지는 팀 구성원 한 명 이상의 approve을 받은 후 진행합니다.  
+* nightly, deploy 브랜치의 ***모든*** 머지는 팀 구성원 한 명 이상의 approve을 받은 후 진행합니다.  
 * merge pull request는 code 작성자와 approver를 제외한 인원 중 한 명이 진행합니다.  
-* 모든 변경점은 우선적으로 nightly에 머지합니다. 충분한 검증이 된 이후 main에 머지를 진행합니다.  
+* 모든 변경점은 우선적으로 nightly에 머지합니다. 충분한 검증이 된 이후 deploy에 머지를 진행합니다.  
 * 필요한 경우 merge와 같이 혹은 merge 이후 6시간 이내에 문서화를 진행합니다.
 * merge 사항이 잘못되었을 경우 ***merge pull request를 진행한 사람***이 책임지고 revert 및 rebase 진행합니다.  
 
