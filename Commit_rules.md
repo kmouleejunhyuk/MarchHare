@@ -35,3 +35,8 @@
 
 * nightly 브랜치에 머지할 경우 test code 추가 및 pull request 제안자의 실행 결과만 본문에 추가합니다.
 * 추가한 사항이 위와 달라 테스트가 어려울 경우 문서화를 먼저 진행하고 실행 로그/데이터 버젼/conda env 환경 및 필요하다고 생각되는 사항을 pull request 본문 마지막에 기입한다.
+
+### 2.4 code 관리 
+> <https://google.github.io/styleguide/pyguide.html>
+* 모든 함수와 클래스에는 docstring을 google style로 작성한다.
+* 기타 린팅 및 코드 스타일은 google style을 따른다.
