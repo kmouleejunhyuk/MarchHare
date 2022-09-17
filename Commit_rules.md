@@ -9,10 +9,11 @@
 
 ## 2. 메인 개발 룰   
 ### 2.1 브랜치 관리
-* main(deploy 전용), nightly branch로 분할합니다.  
+* main, deploy, nightly branch로 분할합니다.  
+* main branch는 사용하지 않습니다.  
 * nightly 브랜치에 최대한 머지합니다.  
 * nightly branch에서는 제한 없이 파생 브랜치를 만들 수 있습니다.  
-* main branch에서도 파생 브랜치를 만들 수 있으나, 최대한 지양합니다.  
+* deploy branch에서도 파생 브랜치를 만들 수 있으나, 최대한 지양합니다.  
 
 ### 2.2 머지 관리 
 * 팀 구성원 전원에게 review를 요청한다.  
@@ -23,14 +24,14 @@
 * merge 사항이 잘못되었을 경우 ***merge pull request를 진행한 사람***이 책임지고 revert 및 rebase 진행합니다.  
 
 ### 2.3 테스트 및 액션 관리(필요 시 git action 테스트 프로세스로 대체한다.)
-* main branch에 머지할 경우 아래 사항을 수행한다  
-	+  신규 추가한 사항이 python class/function이며 testcase가 없을 경우
+* deploy branch에 머지할 경우 아래 사항을 수행한다  
+	+  신규 추가한 사항이 python class/function이며 test code가 없을 경우
 		* pull request 제안자는 이를 테스트할 수 있는 test code를 unit test 용도로 별도 폴더에 작성한다. 경로는 추후 협의한다.  
-		* pull request 시 본문 맨 마지막에 testcode 실행 결과 로그를 첨부한다.  
-		* assignee 중 한명이 직접 testcode를 실행하여 테스트하고(이하 manual unit test) 그 기록을 comment로 기입한다.
+		* pull request 시 본문 맨 마지막에 test code 실행 결과 로그를 첨부한다.  
+		* assignee 중 한명이 직접 test code를 실행하여 테스트하고(이하 manual unit test) 그 기록을 comment로 기입한다.
 		* 최소 2명 이상의 assignee를 걸고 confirm 받는다.  
-		* assignee가 approve 시에는 testcode 실행 결과 로그를 첨부하고 . 단 github action 도입 이후에는 action으로 대체한다.
-	+ 수정사항이 python class/function이며 testcase가 있을 경우
+		* assignee가 approve 시에는 test code 실행 결과 로그를 첨부하고 . 단 github action 도입 이후에는 action으로 대체한다.
+	+ 수정사항이 python class/function이며 test code가 있을 경우
 		* pull request 제안자는 request 본문 맨 마지막에 test code 실행 결과 로그를 첨부한다.  
 
 * nightly 브랜치에 머지할 경우 test code 추가 및 pull request 제안자의 실행 결과만 본문에 추가합니다.
