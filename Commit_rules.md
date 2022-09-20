@@ -13,6 +13,8 @@
 * main branch는 사용하지 않습니다.  
 * nightly 브랜치에 최대한 머지합니다.  
 * nightly branch에서는 제한 없이 파생 브랜치를 만들 수 있습니다.  
+* 파생 브랜치는 name(#related_git_issue_number) 형식을 따릅니다. 
+* 커밋 메시지는 add/modified/delete_something 형식을 따릅니다
 * deploy branch에서도 파생 브랜치를 만들 수 있으나, 최대한 지양합니다.  
 
 ### 2.2 머지 관리 
