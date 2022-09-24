@@ -43,3 +43,8 @@
 > <https://google.github.io/styleguide/pyguide.html>
 * 모든 함수와 클래스에는 docstring을 google style로 작성한다.
 * 기타 린팅 및 코드 스타일은 google style을 따른다.
+
+### 2.5 폴더 관리
+* 모든 리소스(이미지, ckpt, 문서 등)은 최대한 MarchHare/resources에 넣어 둔다
+* 상위 폴더 코드에 접근할 경우 최대한 PYTHONPATH 환경 변수를 재지정하여 사용한다. 
+  
