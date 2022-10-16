@@ -2,7 +2,7 @@
 # install guide: https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/
 # install as master node
 
-# requirements: Homebrew & zsh & sudo 
+# requirements: Homebrew & zsh & sudo & kubelet & kubectl
     # add 
     # autoload -Uz compinit; \n compinit
     # to ~/.zshrc

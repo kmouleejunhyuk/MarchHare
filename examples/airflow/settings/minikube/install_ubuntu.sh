@@ -1,17 +1,19 @@
 # install guide: https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 # install as master node
 
-# requirements: kubectl & bash 4.1+
-    # add 
-    # autoload -Uz compinit; \n compinit
-    # to ~/.zshrc
+# requirements: bash 4.1+ & sudo
 
-    # install kubectl
-    # curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-    # sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+sudo apt-get update
+sudo apt-get install -y apt-transport-https ca-certificates curl
 
+# kubelet, kubeadm, kubectl 1.22.6 버전 설치
+sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt install kubeadm kubectl kubelet
+sudo apt-mark hold kubelet kubeadm kubectl
 
-
+#minikube 설치
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 minikube start
