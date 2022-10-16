@@ -280,6 +280,9 @@ postgresql:
     storageClass: ""
     size: 8Gi
 
+  volumePermissions:
+            enabled: true
+
 ###################################
 ## DATABASE | External Database
 ###################################
