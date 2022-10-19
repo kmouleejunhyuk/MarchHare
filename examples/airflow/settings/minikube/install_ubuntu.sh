@@ -18,8 +18,3 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 minikube start
 
-# monitoring
-# minikube dashboard -p profile --url -> opens url(8080)
-# kubectl proxy --address='0.0.0.0' --disable-filter=true -> opens proxy(8001)
-# in Local(labtop): ssh -L 12345:localhost:8001 user@remote-ip
-# connect to: http://localhost:12345/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/pod?namespace=default
