@@ -33,12 +33,12 @@ airflow:
   ## a list of users to create
   ## [FAQ] https://github.com/airflow-helm/charts/blob/main/charts/airflow/docs/faq/security/airflow-users.md
   users:
-    - username: admin
-      password: admin
-      role: Admin
-      email: admin@example.com
-      firstName: admin
-      lastName: admin
+    # - username: admin
+    #   password: admin
+    #   role: Admin
+    #   email: admin@example.com
+    #   firstName: admin
+    #   lastName: admin
     - username: junhyeok
       password: 33999
       role: Admin
@@ -70,7 +70,12 @@ airflow:
   ## extra VolumeMounts for the airflow Pods
   ## [FAQ] https://github.com/airflow-helm/charts/blob/main/charts/airflow/docs/faq/kubernetes/mount-persistent-volumes.md
   ## [FAQ] https://github.com/airflow-helm/charts/blob/main/charts/airflow/docs/faq/kubernetes/mount-files.md
-  extraVolumeMounts: []
+  extraVolumeMounts: 
+    name: AirflowVolume
+    mountPath: /opt/airflow
+    hostPath: /home/junhyeok/tmp
+    existingClaim: AirflowVolume
+    readOnly: false
 
   ## extra Volumes for the airflow Pods
   ## [FAQ] https://github.com/airflow-helm/charts/blob/main/charts/airflow/docs/faq/kubernetes/mount-persistent-volumes.md
