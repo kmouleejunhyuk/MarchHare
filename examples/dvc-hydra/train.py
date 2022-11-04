@@ -8,7 +8,10 @@ def my_app(cfg : DictConfig) -> None:
   Args:
       cfg (DictConfig): hydra configuration
   """
-  if cfg.dry_run:
+
+  print(OmegaConf.to_yaml(cfg))
+  
+  if cfg.train.dry_run:
     print(OmegaConf.to_yaml(cfg))
   else:
     print('fool!!!!')
