@@ -35,13 +35,13 @@ def check_git_sanity(repo: Repo) -> None:
         exit(0)
 
 class MyCallback(Callback):
-    """callback for logging git hash by 
+    """callback for logging git hash
 
     Args:
         Callback (_type_): hydra callback object
     """
     def on_run_start(self, config: DictConfig, **kwargs: Any) -> None:
-        """if config.git_logging.log is True, else log None
+        """if config.log_git is True, else log None
             - checks sanity
             - logs git commit hash to hydra log
 

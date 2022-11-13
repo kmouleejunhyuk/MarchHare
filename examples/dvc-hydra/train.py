@@ -15,9 +15,9 @@ def my_app(cfg: DictConfig) -> None:
     """
 
     if cfg.train.dry_run:
-        log.info(OmegaConf.to_yaml(cfg))
+      log.info(cfg)
     else:
-        log.warning('fool!!!!')
+        log.info('fool!!!!')
 
 
 if __name__ == "__main__":
