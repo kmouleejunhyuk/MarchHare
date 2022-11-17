@@ -1,0 +1,5 @@
+outs:
+- md5: 94856bd3b6a8a45b5637dd5c544805c7.dir
+  size: 459
+  nfiles: 4
+  path: conf
