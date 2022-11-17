@@ -5,7 +5,7 @@ from git.repo import Repo # installed with `pip install gitpython`
 from hydra.experimental.callback import Callback
 from omegaconf import DictConfig
 
-log = logging.getLogger(__name__)
+log = logging.getLogger('__main__')
 
 def get_git_sha(repo: Repo) -> str:
     """return current git hash string
@@ -51,9 +51,10 @@ class MyCallback(Callback):
         if config.log_git=='enabled':
             repo = Repo(search_parent_directories=True)
             check_git_sanity(repo)
-            log.warning(f"Git sha: {get_git_sha(repo)}")
+            sha = get_git_sha(repo)
+            config.git_sha = sha
         else:
-            log.warning(f"Git sha: {'UNAVAILABLE'}")
+            config.git_sha = 'UNAVAILABLE'
 
     def on_multirun_start(self, config: DictConfig, **kwargs: Any) -> None:
         """if config.git_logging.log is True, else log None
@@ -65,7 +66,7 @@ class MyCallback(Callback):
         """
         if config.log_git=='enabled':
             repo = Repo(search_parent_directories=True)
-            check_git_sanity(repo)
-            log.warning(f"Git sha: {get_git_sha(repo)}")
+            sha = check_git_sanity(repo)
+            config.git_sha = sha
         else:
-            log.warning(f"Git sha: {'UNAVAILABLE'}")
+            config.git_sha = 'UNAVAILABLE'

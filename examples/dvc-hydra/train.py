@@ -13,7 +13,7 @@ def my_app(cfg: DictConfig) -> None:
     Args:
         cfg (DictConfig): hydra configuration
     """
-
+    log.info(f'git_sha: {cfg.git_sha}')
     if cfg.train.dry_run:
       log.info(cfg)
     else:
