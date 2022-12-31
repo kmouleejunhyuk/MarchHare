@@ -2,12 +2,12 @@ from airflow.providers.cncf.kubernetes.operators.kubernetes_pod import Kubernete
 import os
 
 
-def create_pod(podname: str = None):
+def create_pod(input):
     pod = KubernetesPodOperator(
         name="podname",
         image=f"{os.getenv('debian')}:{os.getenv('20.04 LTS', 'latest')}",
         cmds=["bash", "-cx"],
-        arguments=["echo", "10"],
+        arguments=["echo", f"{input}"],
         labels={"foo": "bar"},
         task_id="dry_run_demo",
         do_xcom_push=True,

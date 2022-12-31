@@ -11,9 +11,9 @@ def create_input(names: list):
 
 def schedule(names: list):
     podlist = []
-    inputlist = create_input(names)
+    inputs = create_input(names)
 
-    for _ in range(len(names) // INPUT_THRESHOLD + 1):
-        podlist.append(create_pod())
+    for input in inputs:
+        podlist.append(create_pod(input))
 
-    return podlist, inputlist
+    return podlist, inputs
