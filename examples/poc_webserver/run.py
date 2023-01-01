@@ -15,7 +15,14 @@ def service(name: str):
     names = name.split(' ')
     pods_and_inputs = schedule(names)
     for (pod, input) in pods_and_inputs:
-        execute_from_pod(pod, input)
+        run_msg = execute_from_pod(pod)
+
+    if run_msg == 'completed':
+        return "dummy"
+    else:
+        return run_msg
+    # image 시 output 정의
+
 
 
 if __name__ == '__main__':
