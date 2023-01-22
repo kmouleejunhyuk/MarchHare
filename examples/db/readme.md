@@ -1,5 +1,6 @@
 # run psql install script
 cd MarchHare/examples/db/install
+helm repo add bitnami https://charts.bitnami.com/bitnami
 bash install_db.sh
 pip install -r MarchHare/examples/db/requirements.txt
 
