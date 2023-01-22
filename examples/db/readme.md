@@ -1,6 +1,7 @@
 # run psql install script
 cd MarchHare/examples/db/install
 bash install_db.sh
+pip install -r MarchHare/examples/db/requirements.txt
 
 # after connecting psql client, setup base database and job_meta table
 (easy to execute in manual. scripting is hard)
@@ -18,5 +19,8 @@ CREATE TABLE IF NOT EXISTS job_meta (
 );
 (exit session with ctrl_D)
 
+# after setup, user can use db_util
+export PYTHONPATH=$<path_to_marchhare/examples/db folder>:$PYTHONPATH
+python -c "import db_util"
 
 
