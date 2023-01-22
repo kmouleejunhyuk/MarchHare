@@ -24,4 +24,10 @@ CREATE TABLE IF NOT EXISTS job_meta (
 export PYTHONPATH=$<path_to_marchhare/examples/db folder>:$PYTHONPATH
 python -c "import db_util"
 
+# useful informations
+To accuire postgresql password, run command below
+- kubectl get secret --namespace default database-postgresql -o jsonpath="{.data.postgres-password}" | base64 -d
+
+To accuire postgresql ip, run command below
+- kubectl get pod database-postgresql-0 --template '{{.status.podIP}}'
 
